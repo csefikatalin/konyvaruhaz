@@ -17,22 +17,44 @@ const konyvek = [
         cim: "Védett férfiak",
         ar: 1420,
     },
+    {
+        szerzo: "Robert Merle",
+        cim: "Állati elmék",
+        ar: 2420,
+    },
 ];
 function Tartalom() {
     function megjelenit(adat, db) {
         console.log("A gyerekem üzeni:", adat, db, " db könyv van a kosárban!");
     }
     return (
-        <React.Fragment>
+        <>
             <div className="kosar">
-                <h2>A kosár tartalma:</h2>
+                <p>A kosár tartalma:</p>
                 <table className="table table-striped">
-                    <tr>
-                        <th>Szerző</th>
-                        <th>cím</th>
-                        <th>Ár</th>
-                        <th>Db</th>
-                    </tr>
+                    
+                    <thead>
+                        <tr>
+                            <th>Szerző</th>
+                            <th>Cím</th>
+                            <th>Ár</th>
+                            <th>Db</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <tr>.</tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </tr>
+                        <tr>
+                            <tr>.</tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div className="tartalom">
@@ -46,7 +68,7 @@ function Tartalom() {
                     );
                 })}
             </div>
-        </React.Fragment>
+        </>
     );
 }
 

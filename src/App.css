@@ -9,7 +9,7 @@
 
 .App-header {
     background-color: #282c34;
-    min-height: 30vh;
+    min-height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,8 +18,10 @@
     color: white;
 }
 article {
-    min-height: 60vh;
+    min-height: 75vh;
     font-size: calc(8px + 1vmin);
+    display:grid;
+    grid-template-columns: 1fr 5fr;
 }
 article p {
     font-size: 1em;
@@ -29,7 +31,7 @@ article h2 {
 }
 footer {
     font-size: calc(6px + 1vmin);
-    min-height: 10vh;
+    min-height: 5vh;
     background-color: #959698;
     padding: 10px;
 }

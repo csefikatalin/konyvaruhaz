@@ -5,7 +5,7 @@ function App() {
         <div className="App">
             <header className="App-header">Könyváruház</header>
             <article>
-                <h2>Könyváruház</h2>
+              
                 <Tartalom />
             </article>
             <footer> @Saját név </footer>
