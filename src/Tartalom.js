@@ -5,31 +5,48 @@ const konyvek = [
     {
         szerzo: "Molnár Ferenc",
         cim: "A Pál utcai fiúk",
-        ar:1220
+        ar: 1220,
     },
     {
         szerzo: "Gárdonyi Géza",
         cim: "Egri csillagok",
-        ar:1320
+        ar: 1320,
     },
     {
         szerzo: "Robert Merle",
         cim: "Védett férfiak",
-        ar:1420
+        ar: 1420,
     },
 ];
 function Tartalom() {
+    function megjelenit(adat, db) {
+        console.log("A gyerekem üzeni:", adat, db, " db könyv van a kosárban!");
+    }
     return (
-        <div className="tartalom">
-        { //kapcsos zárójel a JS kód miatt
-        //a map utasítás végigiterál a tömbön, és egy konkrét könyvvel tér vissza
-            konyvek.map((elem, index) => {
-                //konyvAdat={elem}  - itt adjuk át minden Konyv komponensnek az adatát
-            return ( <Konyv konyvAdat={elem} key={index} />)
-        }
-        )}
-           
-        </div>
+        <React.Fragment>
+            <div className="kosar">
+                <h2>A kosár tartalma:</h2>
+                <table className="table table-striped">
+                    <tr>
+                        <th>Szerző</th>
+                        <th>cím</th>
+                        <th>Ár</th>
+                        <th>Db</th>
+                    </tr>
+                </table>
+            </div>
+            <div className="tartalom">
+                {konyvek.map((elem, index) => {
+                    return (
+                        <Konyv
+                            konyvAdat={elem}
+                            key={index}
+                            megjelenit={megjelenit}
+                        />
+                    );
+                })}
+            </div>
+        </React.Fragment>
     );
 }
 
