@@ -1,0 +1,14 @@
+.konyv h3 {
+    background-color: aliceblue;
+    font-size: 1em;
+}
+.konyv p {
+    border-bottom: 1px solid gray;
+    color: gray;
+}
+
+.konyv {
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 10px;
+}
