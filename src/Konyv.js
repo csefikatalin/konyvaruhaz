@@ -3,10 +3,8 @@ import "./Konyv.css";
 function Konyv(props) {
     let db = 0;
     function kosarbaTesz(d) {
-        console.log(props);
-        db = d+1;
-        console.log(db + " könyv van a kosárban");
-        props.megjelenit(props.konyvAdat, db)
+        db = d + 1;
+        props.megjelenit(props.konyvAdat, db);
     }
     return (
         <div className="konyv">

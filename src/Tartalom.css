@@ -9,6 +9,26 @@ article h2 {
 
 .tartalom {
     display:grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap:10px
+}
+.kosar {
+    font-size: 0.7em;
+    background-color: aliceblue;
+}
+
+@media screen and (max-width:600px) {
+    .tartalom {
+       
+        grid-template-columns: repeat(2,1fr);
+        gap:10px
+    }
+}
+
+@media screen and (max-width:300px) {
+    .tartalom {
+       
+        grid-template-columns: repeat(1,1fr);
+        gap:10px
+    }
 }

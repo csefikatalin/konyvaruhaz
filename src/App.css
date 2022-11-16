@@ -2,11 +2,6 @@
     text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
 .App-header {
     background-color: #282c34;
     min-height: 20vh;
@@ -18,17 +13,13 @@
     color: white;
 }
 article {
+    font-size: 10pt;
     min-height: 75vh;
-    font-size: calc(8px + 1vmin);
-    display:grid;
-    grid-template-columns: 1fr 5fr;
+
+    display: grid;
+    grid-template-columns: 2fr 5fr;
 }
-article p {
-    font-size: 1em;
-}
-article h2 {
-    font-size: 1.1em;
-}
+
 footer {
     font-size: calc(6px + 1vmin);
     min-height: 5vh;
@@ -37,4 +28,10 @@ footer {
 }
 .App-link {
     color: #61dafb;
+}
+@media screen and (max-width: 600px) {
+    article {
+        grid-template-columns: repeat(1, 1fr);
+        font-size: calc(8px + 1vw);
+    }
 }
