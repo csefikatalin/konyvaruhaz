@@ -11,4 +11,4 @@ A projekt több branchet is használ, így lépésről lépésre meg tudod nézn
 A projekt letöltése után az npm start paranccsal tudod futtatni a programot.
 Böngészőben az alábbi linken tudod elérni: [http://localhost:3000](http://localhost:3000)
 
-![Mintafeladat](kepek\konyvaruhaz.png "Webáruház REACT-tel")
+![Mintafeladat](https://github.com/csefikatalin/konyvaruhaz/blob/statek_hasznalata/kepek/konyvaruhaz.png "Webáruház REACT-tel")
