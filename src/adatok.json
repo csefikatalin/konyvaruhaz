@@ -1,0 +1,29 @@
+{
+    "adatok": [
+        {
+            "szerzo": "Molnár Ferenc",
+            "cim": "A Pál utcai fiúk",
+            "ar": 1220
+        },
+        {
+            "szerzo": "Gárdonyi Géza",
+            "cim": "Egri csillagok",
+            "ar": 1320
+        },
+        {
+            "szerzo": "Robert Merle",
+            "cim": "Védett férfiak",
+            "ar": 1420
+        },
+        {
+            "szerzo": "Robert Merle",
+            "cim": "Állati elmék",
+            "ar": 2420
+        },
+        {
+            "szerzo": "Robert Merle",
+            "cim": "Malevil",
+            "ar": 3420
+        }
+    ]
+}
