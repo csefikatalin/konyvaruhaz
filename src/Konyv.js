@@ -14,9 +14,11 @@ function Konyv(props) {
         <div className="konyv">
             <h3>{props.konyvAdat.szerzo}</h3>
             <p>{props.konyvAdat.cim}</p>
-            <span>Ár: {props.konyvAdat.ar} Ft </span>
-            <button onClick={() => kosarbaTesz(db)}>Kosárba</button>
-            <button onClick={() => torol()}>Tödfsröl</button>
+            <p>Ár: {props.konyvAdat.ar} Ft </p>
+            <span>
+                <button onClick={() => kosarbaTesz(db)}>Kosárba</button>
+                <button onClick={() => torol()}>Töröl</button>
+            </span>
         </div>
     );
 }

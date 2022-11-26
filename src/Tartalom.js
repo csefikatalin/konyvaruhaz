@@ -3,6 +3,7 @@ import Konyv from "./Konyv.js";
 import React, { useState } from "react";
 
 import Kosar from "./Kosar";
+import KosarModel from "./model/kosarModell";
 
 function Tartalom(props) {
     //A state jellemzi a programunk állapotát.
@@ -14,15 +15,31 @@ function Tartalom(props) {
     const [konyvDB, setKonyvDb] = useState(0);
 
     const [konyvOsszAr, setkonyvOsszAr] = useState(0);
+    const kosarModel = new KosarModel(kosaram);
     function torol(id) {
-
         props.torol(id);
     }
+    function frissit() {
+        setKosaram(kosarModel.getKosar());
+        setkonyvOsszAr(kosarModel.getOsszAr());
+        setKonyvDb(kosarModel.getOsszDb());
+    }
+    function kosarTorol(adat) {
+        kosarModel.kosarbolTorol(adat);
+        frissit();
+    }
+
+    function dbCsokkent(adat) {
+        kosarModel.dbCsokkent(adat);
+        frissit();
+    }
+    function dbNovel(adat) {
+        kosarModel.dbNovel(adat);
+        frissit();
+    }
     function megjelenit(adat, db) {
-        kosaram.push(adat);
-        setKosaram(kosaram);
-        setkonyvOsszAr(konyvOsszAr + adat.ar);
-        setKonyvDb(konyvDB + 1);
+        kosarModel.kosarba(adat);
+        frissit();
     }
     return (
         <>
@@ -36,11 +53,23 @@ function Tartalom(props) {
                             <th>Szerzőkfdjékld </th>
                             <th>Cím</th>
                             <th>Ár</th>
+                            <th>Db</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {kosaram.map((elem, index) => {
-                            return <Kosar kosar={elem} key={index} />;
+                            return (
+                                <Kosar
+                                    kosar={elem}
+                                    dbCsokkent={dbCsokkent}
+                                    dbNovel={dbNovel}
+                                    kosarTorol={kosarTorol}
+                                    key={index}
+                                />
+                            );
                         })}
                     </tbody>
                 </table>

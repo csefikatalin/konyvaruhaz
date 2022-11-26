@@ -3,12 +3,20 @@
     font-size: 1em;
 }
 .konyv p {
-    border-bottom: 1px solid gray;
+    
+    font-size: 0.8em;
     color: gray;
 }
+.konyv p:first-of-type {
+    border-bottom: 1px solid gray;
+    font-size: 1em;
+   
+}
+
 
 .konyv {
     border: 1px solid gray;
     border-radius: 2px;
     padding: 10px;
 }
+
