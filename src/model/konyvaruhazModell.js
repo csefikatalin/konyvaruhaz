@@ -1,13 +1,9 @@
-
 class KonyvModel {
     #konyvekTomb = [];
     #responseClone;
-    constructor() {
-        
-    }
+    constructor() {}
 
-    adatBe(vegpont) {
-        console.log(vegpont);
+    adatBe(vegpont, callback) {
         fetch(vegpont, {
             method: "GET",
             headers: {
@@ -19,9 +15,8 @@ class KonyvModel {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
                 this.#konyvekTomb = data;
-                return data;
+                callback(data);
             })
             .catch((rejectionReason) => {
                 // 3
