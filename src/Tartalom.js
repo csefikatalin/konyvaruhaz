@@ -1,11 +1,11 @@
 import "./Tartalom.css";
 import Konyv from "./Konyv.js";
 import React, { useState } from "react";
-import { useEffect } from "react";
-import Kosar from "./Kosar";
-let vegpont = "http://localhost:3002/adatok";
 
-function Tartalom() {
+import Kosar from "./Kosar";
+
+
+function Tartalom(props) {
     //A state jellemzi a programunk állapotát.
     // inicializáljuk a state kezdő értékét, és megadjuk, hogy melyik függvénnyel tudjuk majd módosítani
     //Ha kétféle értéket is be akarunk állítani a state-ben, akkor
@@ -15,25 +15,8 @@ function Tartalom() {
     const [konyvDB, setKonyvDb] = useState(0);
 
     const [konyvOsszAr, setkonyvOsszAr] = useState(0);
-    const [konyvek, setKonyvek] = useState([]);
-    useEffect(() => {
-        fetch(vegpont, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                setKonyvek(data);
-            })
-            .catch((rejectionReason) => {
-                console.log(
-                    "Error parsing JSON from response:",
-                    rejectionReason
-                );
-            });
-    });
+    
+   
 
     function megjelenit(adat, db) {
         kosaram.push(adat);
@@ -63,7 +46,7 @@ function Tartalom() {
                 </table>
             </div>
             <div className="tartalom">
-                {konyvek.map((elem, index) => {
+                {props.konyvek.map((elem, index) => {
                     return (
                         <Konyv
                             konyvAdat={elem}
