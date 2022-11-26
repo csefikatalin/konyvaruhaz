@@ -71,9 +71,9 @@ class KonyvModel {
                 console.error("Error:", error);
             });
     }
-    adatTorol(vegpont, adat) {
-        console.log("TÖRÖLTEM: " + adat);
-        vegpont += "/" + adat.id;
+    adatTorol(vegpont, id) {
+        console.log("TÖRÖLTEM: " + id);
+        vegpont += "/" + id;
         console.log(vegpont);
         fetch(vegpont, {
             method: "DELETE",

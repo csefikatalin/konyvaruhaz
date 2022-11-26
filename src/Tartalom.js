@@ -4,7 +4,6 @@ import React, { useState } from "react";
 
 import Kosar from "./Kosar";
 
-
 function Tartalom(props) {
     //A state jellemzi a programunk állapotát.
     // inicializáljuk a state kezdő értékét, és megadjuk, hogy melyik függvénnyel tudjuk majd módosítani
@@ -15,9 +14,10 @@ function Tartalom(props) {
     const [konyvDB, setKonyvDb] = useState(0);
 
     const [konyvOsszAr, setkonyvOsszAr] = useState(0);
-    
-   
+    function torol(id) {
 
+        props.torol(id);
+    }
     function megjelenit(adat, db) {
         kosaram.push(adat);
         setKosaram(kosaram);
@@ -28,7 +28,7 @@ function Tartalom(props) {
         <>
             <div className="kosar">
                 <p>A kosár tartalma:</p>
-                <p>Darabbbb: {konyvDB * 2}</p>
+                <p>Darab: {konyvDB}</p>
                 <p>Ősszár: {konyvOsszAr} </p>
                 <table className="table table-striped">
                     <thead>
@@ -52,6 +52,7 @@ function Tartalom(props) {
                             konyvAdat={elem}
                             key={index}
                             megjelenit={megjelenit}
+                            torol={torol}
                         />
                     );
                 })}

@@ -14,10 +14,15 @@ function App() {
     useEffect(() => {
         konyvModel.adatBe(vegpont, setKonyvek);
     });
+    function torol(id) {
+        console.log(id);
+        konyvModel.adatTorol(vegpont, id);
+        konyvModel.adatBe(vegpont, setKonyvek);
+    }
     return (
         <div className="App">
             <header className="App-header">Könyváruház</header>
-            <article>{<Tartalom konyvek={konyvek} />}</article>
+            <article>{<Tartalom konyvek={konyvek} torol={torol} />}</article>
             <footer> @Saját név </footer>
         </div>
     );
