@@ -19,6 +19,3 @@ function App() {
 }
 
 export default App;
-//https://www.developerway.com/posts/how-to-fetch-data-in-react
-//https://codesandbox.io/s/example1-simplest-fetch-ktb0bw?file=/src/App.tsx:439-451
-//https://www.freecodecamp.org/news/fetch-data-react/

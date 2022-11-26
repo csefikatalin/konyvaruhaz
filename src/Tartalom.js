@@ -17,7 +17,6 @@ function Tartalom() {
     const [konyvOsszAr, setkonyvOsszAr] = useState(0);
     const [konyvek, setKonyvek] = useState([]);
     useEffect(() => {
-   
         fetch(vegpont, {
             method: "GET",
             headers: {
@@ -25,7 +24,7 @@ function Tartalom() {
             },
         })
             .then((response) => response.json())
-            .then((data) => {             
+            .then((data) => {
                 setKonyvek(data);
             })
             .catch((rejectionReason) => {
@@ -79,3 +78,5 @@ function Tartalom() {
 }
 
 export default Tartalom;
+
+//www.robinwieruch.de/react-fetching-data/
