@@ -42,7 +42,7 @@ function Tartalom(props) {
         frissit();
     }
     return (
-        <>
+        <div className="apptartalom">
             <div className="kosar">
                 <p>A kosár tartalma:</p>
                 <p>Darab: {konyvDB}</p>
@@ -81,12 +81,12 @@ function Tartalom(props) {
                             konyvAdat={elem}
                             key={index}
                             megjelenit={megjelenit}
-                            torol={torol}
+                            
                         />
                     );
                 })}
             </div>
-        </>
+        </div>
     );
 }
 

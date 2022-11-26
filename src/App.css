@@ -15,9 +15,6 @@
 article {
     font-size: 10pt;
     min-height: 75vh;
-
-    display: grid;
-    grid-template-columns: 2fr 5fr;
 }
 
 footer {
@@ -28,10 +25,4 @@ footer {
 }
 .App-link {
     color: #61dafb;
-}
-@media screen and (max-width: 600px) {
-    article {
-        grid-template-columns: repeat(1, 1fr);
-        font-size: calc(8px + 1vw);
-    }
 }

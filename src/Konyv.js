@@ -17,7 +17,6 @@ function Konyv(props) {
             <p>Ár: {props.konyvAdat.ar} Ft </p>
             <span>
                 <button onClick={() => kosarbaTesz(db)}>Kosárba</button>
-                <button onClick={() => torol()}>Töröl</button>
             </span>
         </div>
     );
