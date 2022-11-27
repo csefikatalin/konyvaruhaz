@@ -1,42 +1,24 @@
 import "./App.css";
-import Tartalom from "./Tartalom.js";
-import KonyvModel from "./model/konyvaruhazModell";
+import Public from "./components/public/Public";
+
 import { useState } from "react";
 import { useEffect } from "react";
-import TartalomAdmin from "./TartalomAdmin";
-let vegpont = "http://localhost:3002/adatok";
-//type KonyvTipus = {szerzo: String; cim: String; ar: integer}[]
-//let konyvek = [ ];
+import Admin from "./components/admin/Admin";
+
 
 function App() {
-    const konyvModel = new KonyvModel();
-    const [konyvek, setKonyvek] = useState([]);
-    let tart = <Tartalom konyvek={konyvek} torol={torol} />;
-    const [tartalom, setTartalom] = useState(null);
+    const [felulet, setFelulet] = useState("public");
+    const [tartalom, setTartalom] = useState(<Public />);
 
-    useEffect(() => {
-        konyvModel.adatBe(vegpont, setKonyvek);
-    });
-    function torol(id) {
-        console.log(id);
-        konyvModel.adatTorol(vegpont, id);
-        konyvModel.adatBe(vegpont, setKonyvek);
-    }
-    function modosit(id) {
-        console.log("módosít", id);
-    }
+    
 
     function webaruhaz() {
-        console.log("publikus");
-        let tart = <Tartalom konyvek={konyvek} />;
-        setTartalom(tart);
+        setFelulet("public");
+        setTartalom(<Public />);
     }
     function admin() {
-        console.log("admin");
-        let tart = (
-            <TartalomAdmin konyvek={konyvek} torol={torol} modosit={modosit} />
-        );
-        setTartalom(tart);
+        setFelulet("admin");
+        setTartalom(<Admin />);
     }
     return (
         <div className="App">

@@ -1,8 +1,10 @@
 class KonyvModel {
     #konyvekTomb = [];
     #responseClone;
-    constructor() {}
 
+    getKonyvek() {
+        return this.#konyvekTomb;
+    }
     adatBe(vegpont, callback) {
         fetch(vegpont, {
             method: "GET",
@@ -35,7 +37,7 @@ class KonyvModel {
                     });
             });
     }
-    adatUj(vegpont, adat) {
+    adatUj(vegpont, adat, callback) {
         fetch(vegpont, {
             method: "POST",
             headers: {

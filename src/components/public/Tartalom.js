@@ -3,7 +3,7 @@ import Konyv from "./Konyv.js";
 import React, { useState } from "react";
 
 import Kosar from "./Kosar";
-import KosarModel from "./model/kosarModell";
+import KosarModel from "./../../model/kosarModell";
 
 function Tartalom(props) {
     //A state jellemzi a programunk állapotát.
@@ -16,9 +16,7 @@ function Tartalom(props) {
 
     const [konyvOsszAr, setkonyvOsszAr] = useState(0);
     const kosarModel = new KosarModel(kosaram);
-    function torol(id) {
-        props.torol(id);
-    }
+ 
     function frissit() {
         setKosaram(kosarModel.getKosar());
         setkonyvOsszAr(kosarModel.getOsszAr());

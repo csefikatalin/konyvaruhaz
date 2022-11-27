@@ -6,10 +6,7 @@ function Konyv(props) {
         db = d + 1;
         props.megjelenit(props.konyvAdat, db);
     }
-    function torol() {
-        console.log("torol");
-        props.torol(props.konyvAdat.id);
-    }
+
     return (
         <div className="konyv">
             <h3>{props.konyvAdat.szerzo}</h3>
