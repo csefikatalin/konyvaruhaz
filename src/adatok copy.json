@@ -24,6 +24,18 @@
             "cim": "Állati elmék",
             "ar": 2420
         },
-        { "id": "5", "szerzo": "Robert Merle", "cim": "Malevil", "ar": 3420 }
+        { "id": "5", "szerzo": "Robert Merle", "cim": "Malevil", "ar": 3420 },
+        {
+            "cim": "A Pál utcai fiúk",
+            "szerzo": "Molnár Ferenc",
+            "ar": "2345",
+            "id": "6l1xjeZ"
+        },
+        {
+            "cim": "A Funtinelli boszorkány",
+            "szerzo": "Wass Albert",
+            "ar": "3345",
+            "id": "WknfPUi"
+        }
     ]
 }

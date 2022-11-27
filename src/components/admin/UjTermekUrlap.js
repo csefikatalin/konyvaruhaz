@@ -28,7 +28,7 @@ function UjTermekUrlap(props) {
                         id="szerzo"
                         value={szerzo}
                         onChange={adatValt}
-                    ></input>
+                    />
 
                     <label for="cim">Cím</label>
                     <input

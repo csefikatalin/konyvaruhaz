@@ -1,16 +1,10 @@
 {
   "adatok": [
     {
-      "id": "3",
-      "szerzo": "Robert Merle",
-      "cim": "Védett férfiak",
-      "ar": 1420
-    },
-    {
-      "id": "5",
-      "szerzo": "Robert Merle",
       "cim": "Malevil",
-      "ar": 3420
+      "szerzo": "Robert Merle",
+      "ar": 3420,
+      "id": "5"
     },
     {
       "cim": "A Pál utcai fiúk",

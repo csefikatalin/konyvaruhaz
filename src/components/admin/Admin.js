@@ -7,18 +7,19 @@ let vegpont = "http://localhost:3002/adatok";
 
 function Admin() {
     const konyvModel = new KonyvModel();
-    const [konyvek, setKonyvek] = useState([]);  
-   
+    const [konyvek, setKonyvek] = useState([]);
 
     useEffect(() => {
         konyvModel.adatBe(vegpont, setKonyvek);
     }, []);
+
     function torol(id) {
         konyvModel.adatTorol(vegpont, id);
         konyvModel.adatBe(vegpont, setKonyvek);
     }
-    function modosit(id) {
-        console.log("módosít", id);
+    function modosit(adat) {
+        konyvModel.adatModosit(vegpont, adat);
+        console.log("módosít", adat);
     }
     function ujTermekMentes(adat) {
         konyvModel.adatUj(vegpont, adat, setKonyvek);

@@ -14,9 +14,11 @@
 }
 article {
     font-size: 10pt;
-    min-height: 75vh;
+    min-height: 70vh;
 }
-
+nav {
+    min-height: 5vh;
+}
 footer {
     font-size: calc(6px + 1vmin);
     min-height: 5vh;

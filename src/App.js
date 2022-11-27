@@ -1,23 +1,15 @@
 import "./App.css";
-import Public from "./components/public/Public";
-
 import { useState } from "react";
-import { useEffect } from "react";
+import Public from "./components/public/Public";
 import Admin from "./components/admin/Admin";
 
-
 function App() {
-    const [felulet, setFelulet] = useState("public");
-    const [tartalom, setTartalom] = useState(<Public />);
-
-    
+    const [tartalom, setTartalom] = useState(<Admin />);
 
     function webaruhaz() {
-        setFelulet("public");
         setTartalom(<Public />);
     }
     function admin() {
-        setFelulet("admin");
         setTartalom(<Admin />);
     }
     return (

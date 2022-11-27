@@ -56,8 +56,8 @@ class KonyvModel {
 
     adatModosit(vegpont, adat) {
         console.log(adat);
-        console.log("MÓDOSÍT " + vegpont);
         vegpont += "/" + adat.id;
+        console.log("MÓDOSÍT " + vegpont);
         fetch(vegpont, {
             method: "PUT",
             headers: {
@@ -67,7 +67,7 @@ class KonyvModel {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log("MÓDOSÍTottam " + data.updatedAt);
+                console.log("MÓDOSÍTottam " + data);
             })
             .catch((error) => {
                 console.error("Error:", error);

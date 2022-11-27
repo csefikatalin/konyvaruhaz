@@ -9,16 +9,17 @@ function TartalomAdmin(props) {
     }
     function modosit(adat) {
         console.log("Módosít", adat);
+        props.modosit(adat);
     }
     function mentes(adat) {
         console.log("Új adat", adat);
-        props.ujTermekMentes(adat)
+        props.ujTermekMentes(adat);
     }
 
     return (
         <>
             <div className="ujtermek">
-                <UjTermekUrlap mentes={mentes}  />
+                <UjTermekUrlap mentes={mentes} />
             </div>
             <div className="adatoklistazasa">
                 <table>
