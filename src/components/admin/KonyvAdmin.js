@@ -24,22 +24,44 @@ function KonyvAdmin(props) {
     function modosit() {
         console.log(adat);
         props.modosit(adat);
+        document
+            .getElementById("sz" + props.konyvAdat.id)
+            .classList.remove("elrejt");
+        document
+            .getElementById("m" + props.konyvAdat.id)
+            .classList.add("elrejt");
+        let inputElemek = document.querySelectorAll(
+            ".adat" + props.konyvAdat.id + " input"
+        );
+        inputElemek.forEach((element) => {
+            element.classList.add("elrejt");
+        });
     }
     function torol() {
         console.log("torol");
         props.torol(props.konyvAdat.id);
     }
     function szerkeszt(event) {
-        //event.target.classList.remove("elrejt");
-        //document.getElementsByClassName("szerkeszt")[0].classList.add("elrejt");
+        document
+            .getElementById("sz" + props.konyvAdat.id)
+            .classList.add("elrejt");
+        document
+            .getElementById("m" + props.konyvAdat.id)
+            .classList.remove("elrejt");
+        let inputElemek = document.querySelectorAll(
+            ".adat" + props.konyvAdat.id + " input"
+        );
+        inputElemek.forEach((element) => {
+            element.classList.remove("elrejt");
+        });
     }
     return (
         <tr className="konyv">
             <td>
                 {szerzo}
-                <div>
+                <div className={"adat" + props.konyvAdat.id}>
                     <input
-                        className=" elrejt"
+                        className="elrejt"
                         type="text"
                         id="szerzo"
                         value={szerzo}
@@ -49,7 +71,7 @@ function KonyvAdmin(props) {
             </td>
             <td>
                 {cim}
-                <div>
+                <div className={"adat" + props.konyvAdat.id}>
                     <input
                         className=" elrejt"
                         type="text"
@@ -61,7 +83,7 @@ function KonyvAdmin(props) {
             </td>
             <td>
                 {ar} Ft
-                <div>
+                <div className={"adat" + props.konyvAdat.id}>
                     <input
                         className=" elrejt"
                         type="Number"
@@ -72,13 +94,25 @@ function KonyvAdmin(props) {
                 </div>
             </td>
             <td>
-                <button className="szerkeszt" onClick={() => szerkeszt()}>
+                <button
+                    className="szerkeszt"
+                    id={"sz" + props.konyvAdat.id}
+                    onClick={() => szerkeszt()}
+                >
                     Szerkeszt
                 </button>
-                <button className="modosit elrejt" onClick={() => modosit()}>
+                <button
+                    className="modosit elrejt"
+                    id={"m" + props.konyvAdat.id}
+                    onClick={() => modosit()}
+                >
                     Módosít
                 </button>
-                <button className="torol" onClick={() => torol()}>
+                <button
+                    className="torol"
+                    id={"t" + props.konyvAdat.id}
+                    onClick={() => torol()}
+                >
                     Töröl
                 </button>
             </td>
