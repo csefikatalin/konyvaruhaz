@@ -9,7 +9,7 @@
     {
       "cim": "A Pál utcai fiúk",
       "szerzo": "Molnár Ferenc",
-      "ar": "2345",
+      "ar": "2346",
       "id": "6l1xjeZ"
     },
     {
@@ -17,6 +17,12 @@
       "szerzo": "Wass Albert",
       "ar": "3345",
       "id": "WknfPUi"
+    },
+    {
+      "cim": "Elvásik a veres csillag",
+      "szerzo": "Wass Albert",
+      "ar": "3000",
+      "id": "afoHORq"
     }
   ]
 }

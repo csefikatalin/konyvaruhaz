@@ -20,7 +20,7 @@ function UjTermekUrlap(props) {
 
     return (
         <>
-            <form>
+            <form onSubmit={mentes}>
                 <fieldset>
                     <label for="szerzo">Szerző</label>
                     <input
@@ -46,7 +46,7 @@ function UjTermekUrlap(props) {
                         onChange={adatValt}
                     />
                 </fieldset>
-                <input type="button" value="Mentés" onClick={mentes} />
+                <input type="submit" value="Mentés" />
             </form>
         </>
     );

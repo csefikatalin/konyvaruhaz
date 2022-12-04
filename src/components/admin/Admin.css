@@ -2,13 +2,19 @@ table {
     width: 100%;
     height: auto;
     border-collapse: collapse;
+    background-color: rgb(240, 240, 247);
 }
 td,
 th {
     border: 1px solid lavenderblush;
 }
+th {
+    background-color: rgb(37, 37, 40);
+    color: aliceblue;
+    font-weight: lighter;
+}
 tr:nth-child(even) {
-    background-color: lavender;
+    background-color: rgb(205, 205, 213);
 }
 button {
     padding: 2px;
@@ -23,4 +29,10 @@ button {
     height: 15px;
     padding: 0;
 }
-
+input[type="text"], input[type="number"] {
+    font-size: 0.8em;
+    background-color: rgb(245, 241, 236);
+    border: 1px solid rgb(217, 212, 212);
+    padding: 1pt;
+    margin:1pt;
+}

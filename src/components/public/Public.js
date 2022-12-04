@@ -1,8 +1,12 @@
-import Tartalom from "./Tartalom";
-import KonyvModel from "../../model/konyvaruhazModell";
-import { useState } from "react";
+import "./Public.css";
+import Konyv from "./Konyv.js";
+import React, { useState } from "react";
 import { useEffect } from "react";
-let vegpont = "http://localhost:3002/adatok";
+import Kosar from "./Kosar";
+
+import KosarModel from "../../model/kosarModell";
+import KonyvModel from "../../model/konyvaruhazModell";
+let vegpont = "http://localhost:3000/adatok";
 /* type KonyvTipus = {szerzo: String; cim: String; ar: integer}[] */
 
 function Public() {
@@ -13,7 +17,80 @@ function Public() {
         konyvModel.adatBe(vegpont, setKonyvek);
     }, []);
 
-    return <>{<Tartalom konyvek={konyvek} />}</>;
+    const [kosaram, setKosaram] = useState([]);
+    const [konyvDB, setKonyvDb] = useState(0);
+
+    const [konyvOsszAr, setkonyvOsszAr] = useState(0);
+    const kosarModel = new KosarModel(kosaram);
+
+    function frissit() {
+        setKosaram(kosarModel.getKosar());
+        setkonyvOsszAr(kosarModel.getOsszAr());
+        setKonyvDb(kosarModel.getOsszDb());
+    }
+    function kosarTorol(adat) {
+        kosarModel.kosarbolTorol(adat);
+        frissit();
+    }
+
+    function dbCsokkent(adat) {
+        kosarModel.dbCsokkent(adat);
+        frissit();
+    }
+    function dbNovel(adat) {
+        kosarModel.dbNovel(adat);
+        frissit();
+    }
+    function megjelenit(adat, db) {
+        kosarModel.kosarba(adat);
+        frissit();
+    }
+    return (
+        <div className="apptartalom">
+            <div className="kosar">
+                <p>A kosár tartalma:</p>
+                <p>Darab: {konyvDB}</p>
+                <p>Összár: {konyvOsszAr} </p>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Szerzők </th>
+                            <th>Cím</th>
+                            <th>Ár</th>
+                            <th>Db</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {kosaram.map((elem, index) => {
+                            return (
+                                <Kosar
+                                    kosar={elem}
+                                    dbCsokkent={dbCsokkent}
+                                    dbNovel={dbNovel}
+                                    kosarTorol={kosarTorol}
+                                    key={index}
+                                />
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+            <div className="tartalom">
+                {konyvek.map((elem, index) => {
+                    return (
+                        <Konyv
+                            konyvAdat={elem}
+                            key={index}
+                            megjelenit={megjelenit}
+                        />
+                    );
+                })}
+            </div>
+        </div>
+    );
 }
 
 export default Public;

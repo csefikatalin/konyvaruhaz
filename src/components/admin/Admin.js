@@ -1,8 +1,12 @@
+import "./Admin.css";
 import KonyvModel from "../../model/konyvaruhazModell";
 import { useState } from "react";
 import { useEffect } from "react";
-import TartalomAdmin from "./TartalomAdmin";
-let vegpont = "http://localhost:3002/adatok";
+import KonyvAdmin from "./KonyvAdmin.js";
+
+import UjTermekUrlap from "./UjTermekUrlap";
+
+let vegpont = "http://localhost:3000/adatok";
 /* type KonyvTipus = {szerzo: String; cim: String; ar: integer}[] */
 
 function Admin() {
@@ -28,14 +32,34 @@ function Admin() {
 
     return (
         <>
-            {
-                <TartalomAdmin
-                    konyvek={konyvek}
-                    torol={torol}
-                    modosit={modosit}
-                    ujTermekMentes={ujTermekMentes}
-                />
-            }
+            <div className="ujtermek">
+                <UjTermekUrlap mentes={ujTermekMentes} />
+            </div>
+            <div className="adatoklistazasa">
+                <table>
+                    <thead>
+                        <tr className="fejlec">
+                            <th>Szerző</th>
+                            <th>Cím</th>
+                            <th>Ár</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {konyvek.map((elem, index) => {
+                            return (
+                                <KonyvAdmin
+                                    konyvAdat={elem}
+                                    key={index}
+                                    modosit={modosit}
+                                    torol={torol}
+                                    ujTermekMentes={ujTermekMentes}
+                                />
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 }
