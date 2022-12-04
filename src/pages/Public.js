@@ -1,12 +1,12 @@
 import "./Public.css";
-import Konyv from "./Konyv.js";
+import Konyv from "../components/public/Konyv.js";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Kosar from "./Kosar";
+import Kosar from "../components/public/Kosar";
 
-import KosarModel from "../../model/kosarModell";
-import KonyvModel from "../../model/konyvaruhazModell";
-let vegpont = "http://localhost:3000/adatok";
+import KosarModel from "../model/kosarModell";
+import KonyvModel from "../model/konyvaruhazModell";
+let vegpont = "http://localhost:3001/adatok";
 /* type KonyvTipus = {szerzo: String; cim: String; ar: integer}[] */
 
 function Public() {

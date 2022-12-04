@@ -1,12 +1,12 @@
 import "./Admin.css";
-import KonyvModel from "../../model/konyvaruhazModell";
+import KonyvModel from "../model/konyvaruhazModell";
 import { useState } from "react";
 import { useEffect } from "react";
-import KonyvAdmin from "./KonyvAdmin.js";
+import KonyvAdmin from "../components/admin/KonyvAdmin.js";
 
-import UjTermekUrlap from "./UjTermekUrlap";
+import UjTermekUrlap from "../components/admin/UjTermekUrlap";
 
-let vegpont = "http://localhost:3000/adatok";
+let vegpont = "http://localhost:3001/adatok";
 /* type KonyvTipus = {szerzo: String; cim: String; ar: integer}[] */
 
 function Admin() {
