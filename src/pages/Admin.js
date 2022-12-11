@@ -6,11 +6,16 @@ import KonyvAdmin from "../components/admin/KonyvAdmin.js";
 
 import UjTermekUrlap from "../components/admin/UjTermekUrlap";
 
-let vegpont = "http://localhost:3001/adatok";
+let vegpont =
+    "https://my-json-server.typicode.com/csefikatalin/konyvaruhaz_szerver/adatok";
+/*  let vegpont = "http://localhost:3001/adatok";  */
+
 /* type KonyvTipus = {szerzo: String; cim: String; ar: integer}[] */
+const token =
+    "eyJpdiI6Ik5OUmJaYWJOenlkaFE4UWZCdUtacVE9PSIsInZhbHVlIjoiQVlTRWRnWFpuMkI5NjZoM2l4WFhTbHU2ZjhaZklXRzA3Vk51eUpBOHJ5YmZMYlhxMmQ5RHk4djRiL1N4VFdGN2JubDVsR2FSNzRTK3BERFU3bkEvdkErMlU2aHBQN3ZkdWdUcWJJWlQrRkYrNWgwRnZvSmRyWit2QWpJUWJiM20iLCJtYWMiOiJkMTk2ZmEzOTMwZDg5YWQzMDhiNDJjY2YyN2ZmOGYwOWRjOWIyZGYyOGMwYzRhNGY0N2E3MzVjOGQ1ZWM5ODc1IiwidGFnIjoiIn0=";
 
 function Admin() {
-    const konyvModel = new KonyvModel();
+    const konyvModel = new KonyvModel(token);
     const [konyvek, setKonyvek] = useState([]);
 
     useEffect(() => {

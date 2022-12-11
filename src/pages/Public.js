@@ -6,7 +6,8 @@ import Kosar from "../components/public/Kosar";
 
 import KosarModel from "../model/kosarModell";
 import KonyvModel from "../model/konyvaruhazModell";
-let vegpont = "http://localhost:3001/adatok";
+let vegpont = "https://my-json-server.typicode.com/csefikatalin/konyvaruhaz_szerver/adatok";
+
 /* type KonyvTipus = {szerzo: String; cim: String; ar: integer}[] */
 
 function Public() {

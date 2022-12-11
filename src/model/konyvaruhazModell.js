@@ -1,14 +1,19 @@
 class KonyvModel {
     #konyvekTomb = [];
     #responseClone;
-
+    constructor(token) {
+        this.token = token;
+       
+    }
     getKonyvek() {
         return this.#konyvekTomb;
     }
     adatBe(vegpont, callback) {
-        fetch(vegpont, {
+        console.log(vegpont);
+         fetch(vegpont, {
             method: "GET",
             headers: {
+                "X-CSRF-TOKEN": this.token,
                 "Content-Type": "application/json",
             },
         })
@@ -35,12 +40,13 @@ class KonyvModel {
                             bodyText
                         ); // 6
                     });
-            });
+            }); 
     }
     adatUj(vegpont, adat, callback) {
         fetch(vegpont, {
             method: "POST",
             headers: {
+                "X-CSRF-TOKEN": this.token,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(adat),
@@ -61,6 +67,7 @@ class KonyvModel {
         fetch(vegpont, {
             method: "PUT",
             headers: {
+                "X-CSRF-TOKEN": this.token,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(adat),
@@ -73,11 +80,12 @@ class KonyvModel {
                 console.error("Error:", error);
             });
     }
-    adatTorol(vegpont, id) {
+    /*  adatTorol(vegpont, id) {
         console.log("TÖRÖLTEM: " + id);
         vegpont += "/" + id;
         console.log(vegpont);
         fetch(vegpont, {
+            "X-CSRF-TOKEN":this.token,
             method: "DELETE",
         })
             .then()
@@ -87,7 +95,7 @@ class KonyvModel {
             .catch((error) => {
                 console.error("Error:", error);
             });
-    }
+    } */
     konyvVesz(adat) {
         console.log("Vettem: " + adat);
     }
