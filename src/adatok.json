@@ -1,0 +1,28 @@
+{
+  "adatok": [
+    {
+      "cim": "Malevil",
+      "szerzo": "Robert Merle",
+      "ar": "3424",
+      "id": "5"
+    },
+    {
+      "cim": "A Pál utcai fiúk",
+      "szerzo": "Molnár Ferenc",
+      "ar": "2346",
+      "id": "6l1xjeZ"
+    },
+    {
+      "cim": "A Funtinelli boszorkány",
+      "szerzo": "Wass Albert",
+      "ar": "3345",
+      "id": "WknfPUi"
+    },
+    {
+      "cim": "Elvásik a veres csillag",
+      "szerzo": "Wass Albert",
+      "ar": "3000",
+      "id": "afoHORq"
+    }
+  ]
+}

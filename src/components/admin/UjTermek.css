@@ -1,0 +1,20 @@
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 10px 10px 50px 10px;
+    font-size: 10px;
+}
+fieldset {
+    display: grid;
+    grid-template-columns: 100px auto;
+}
+label {
+    text-align: right;
+    padding-right: 20px;
+}
+/* input[type="button"] {
+    width: 150px;
+    float: right;
+    background-color: aliceblue;
+    border: 1px solid lightblue;
+} */

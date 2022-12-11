@@ -1,0 +1,51 @@
+.tartalom p {
+    font-size: 1em;
+}
+article h2 {
+    font-size: 1.1em;
+}
+.apptartalom {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+}
+.tartalom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.kosar {
+    font-size: 0.7em;
+    background-color: aliceblue;
+}
+
+button {
+    padding: 2px;
+    font-size: 8pt;
+    background-color: aliceblue;
+    border: 1px solid lightblue;
+    border-radius: 2px;
+}
+.kosar button {
+    color: red;
+    width: 15px;
+    height: 15px;
+    padding: 0 0 5px 0;
+    margin: 0;
+}
+@media screen and (max-width: 600px) {
+    .tartalom {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: calc(8px + 1vw);
+    }
+    .apptartalom {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .tartalom {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
